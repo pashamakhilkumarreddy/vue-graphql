@@ -4,8 +4,10 @@
   "description": "GraphQL",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js --exec 'npm run lint --fix && node'",
-    "lint": "eslint /**/*.js",
+    "start": "nodemon src/app.js --exec 'npm run lint --fix && node'",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
+    "prod": "pm2 start src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -19,7 +21,7 @@
     "dotenv": "^8.2.0",
     "graphql": "^15.0.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.15",
+    "mongoose": "^5.9.16",
     "pm2": "^4.4.0"
   },
   "devDependencies": {
