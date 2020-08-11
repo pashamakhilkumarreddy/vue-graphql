@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon src/app.js --exec 'npm run lint --fix && node'",
-    "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint src/**/*.js --fix",
+    "lint": "eslint --ext .js src/",
+    "lint:fix": "eslint --ext .js src/ --fix",
     "prod": "pm2 start src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,19 +16,19 @@
   "author": "Pasham Akhil Kumar Reddy",
   "license": "MIT",
   "dependencies": {
-    "apollo-server": "^2.13.1",
+    "apollo-server": "^2.16.1",
     "bcrypt": "^4.0.1",
     "dotenv": "^8.2.0",
-    "graphql": "^15.0.0",
+    "graphql": "^15.3.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.16",
+    "mongoose": "^5.9.28",
     "pm2": "^4.4.0"
   },
   "devDependencies": {
-    "concurrently": "^5.2.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2",
+    "concurrently": "^5.3.0",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
     "nodemon": "^2.0.4"
   }
 }

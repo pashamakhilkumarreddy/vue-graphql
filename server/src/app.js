@@ -10,7 +10,7 @@ const resolvers = require('./graphQL/resolvers');
 
 const {
   User,
-  Post
+  Post,
 } = require('./models');
 
 const PORT = config.server.PORT || 4000;
@@ -24,19 +24,19 @@ const server = new ApolloServer({
   context: {
     User,
     Post,
-  }
+  },
 });
 
 mongoose.connect(config.db.MONGO_URI, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
 }).then(() => {
-  console.info(`Successfully connnected to the database`);
+  console.info('Successfully connnected to the database');
   server.listen(PORT).then(({
-    url
+    url,
   }) => {
     console.info(`The server is listening on ${url}`);
   });
 }).catch((err) => {
   console.error(`Unable to connect to the database ${err}`);
-})
+});
